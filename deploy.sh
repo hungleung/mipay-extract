@@ -3,11 +3,11 @@
 declare -a urls=(
 
 # Rom URLs
-'http://bigota.d.miui.com/V9.5.2.0.ODECNFA/miui_MIMIX2_V9.5.2.0.ODECNFA_19d8e623ed_8.0.zip'
+'http://bigota.d.miui.com/V9.5.5.0.ODECNFA/miui_MIMIX2_V9.5.5.0.ODECNFA_ce36614af8_8.0.zip'
 
 )
 
-EU_VER=V9.5.2.0.ODECNFA
+EU_VER=V9.5.5.0.ODECNFA
 EU_VER_MIUI=v9.5
 EU_VER_ANDR=8.0
 
