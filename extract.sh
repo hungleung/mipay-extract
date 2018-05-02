@@ -3,6 +3,7 @@
 cd "$(dirname "$0")"
 
 mipay_apps="Mipay TSMClient UPTsmService"
+[ -z "$EXTRA" ] || mipay_apps="$mipay_apps $EXTRA"
 
 base_dir=$PWD
 tool_dir=$base_dir/tools
@@ -222,7 +223,11 @@ extract() {
 trap "echo '--> abort'; exit 1" INT
 declare -a darr=("$@")
 for i in "${darr[@]}"; do
-    echo "--> Downloading $(basename $i)"
+    f="$(basename $i)"
+    if [ -f "$f" ] && ! [ -f "$f".aria2 ]; then
+        continue
+    fi
+    echo "--> Downloading $f"
     $aria2c $i || exit 1
 done
 trap - INT
