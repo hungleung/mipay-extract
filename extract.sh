@@ -12,6 +12,11 @@ case $key in
     echo "--> Enabled app vault extract"
     shift
     ;;
+    --mivoice)
+    EXTRA_PRIV="app/VoiceAssist app/VoiceTrigger $EXTRA_PRIV"
+    echo "--> Enabled Mi Voice Assist"
+    shift
+    ;;
     *)
     darr+=("$1")
     shift
